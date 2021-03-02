@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lewisoutdoorllc/noteTakerApp/issues"
   },
-  "homepage": "https://github.com/lewisoutdoorllc/noteTakerApp#readme"
+  "homepage": "https://github.com/lewisoutdoorllc/noteTakerApp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
