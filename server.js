@@ -1,7 +1,7 @@
 const express = require("express");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const app = express();
-const uuid = require('uuid')
+//const { v4: uuid } = require('uuid')
 const fs = require("fs");
 const path = require("path");
 
@@ -18,28 +18,17 @@ app.get("*", (req, res) => {
   });
 
 app.get("/api/notes", (req, res) => {
-  fs.readFile('./db/db.json', 'uft8')
-  console.log('readfile called');
+  res.send(fs.readFileSync('./db/db.json', 'utf8'));
 });
 
 
 app.post("/api/notes", (req, res) => {
-    const newNote = {
-        id: uuid.v4(),
-        reg.body
-    }
-    
-    
-    
-    req.body
-    savedNotes = JSON.parse(fs.readFileSync('./db/db.json', 'uft8'));
-    newNote.id = savedNotes.length;
-    savedNotes.push(newNote);
-    fs.writeFileSync(path.join(__dirname, './db/db.json'))
-    JSON.stringify(savedNotes)
-    console.log('You have added a new note!!');
-    res.json(newNote)
-    
+    let newNote = req.body
+    //newNote.id = uuid.v4; 
+    saveNotes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+    saveNotes.push(newNote);
+    fs.writeFileSync(path.join(__dirname, './db/db.json'),JSON.stringify(saveNotes))
+    res.json(newNote) 
   });
   
 
