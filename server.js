@@ -50,28 +50,3 @@ app.listen(PORT, () => {
 
 
 
-
- // const id = parseInt(req.params.id);
-  // deleteNotes = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
-  // fs.writeFileSync(
-  //   path.join(__dirname, "./db/db.json"),
-  //   JSON.stringify(deleteNotes.filter((saveNotes) => saveNotes.id !== (id)))
-  // );
-  // console.log(`Note Deleted!`);
-  // res.sendStatus(200);
-
-
-
-
-// const deleteNote = notes.some(
-//   (notes) => notes.id === parseInt(req.params.id)
-// );
-
-// if (deleteNote) {
-//   res.json({
-//     msg: "Note Deleted",
-//     notes: notes.filter(notes => notes.id !== parseInt(require.params.id))
-//   });
-// } else {
-//   res.status(400).json({ msg: 'No Notes to Delete'});
-// }
